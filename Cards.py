@@ -9,11 +9,11 @@ playing = True
 
 class Card:
 
-    def __init__(self):
+    def __init__(self, rank, suit):
         pass
 
     def __str__(self):
-        pass
+        return f"{self.rank} of {self.suit}"
 
 class Deck:
 
@@ -24,10 +24,28 @@ class Deck:
                 self.deck.append(rank + " " + suit)
 
     def __str__(self):
-        pass
+        return str(self.deck)
 
     def shuffle(self):
         random.shuffle(self.deck)
 
     def deal(self):
+        self.deck.pop(0)
+
+class Hand:
+    def __init__(self):
+        self.cards = []
+        self.value = 0
+        self.aces = 0
+
+    def add_card(self,deck):
         pass
+
+    def adjust_for_ace(self):
+        pass
+
+test_deck = Deck()
+test_deck.shuffle()
+print (test_deck)
+test_deck.deal()
+print (test_deck)
